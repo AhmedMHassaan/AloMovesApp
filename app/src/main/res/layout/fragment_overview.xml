@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+        <variable
+            name="sereis"
+            type="com.ahmedmhassaan.domain.models.DomainSeries" />
+    </data>
+
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <androidx.constraintlayout.widget.Guideline
+                android:id="@+id/startGuide"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                app:layout_constraintGuide_percent=".05" />
+
+            <androidx.constraintlayout.widget.Guideline
+                android:id="@+id/endGuide"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                app:layout_constraintGuide_percent=".95" />
+
+            <TextView
+                android:id="@+id/lblAboutCourseTag"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_5sdp"
+                android:text="About The Series"
+                android:textAllCaps="true"
+                android:textColor="@color/black"
+                android:textSize="@dimen/_20sdp"
+                android:textStyle="bold"
+                app:layout_constraintStart_toEndOf="@id/startGuide"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/lblAboutSeries"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_15sdp"
+                android:text="sdflksdjfsldfsd;fmsd;fsdf;sdf\nsdkjfhdskfjdshfkjsdhfkdsjfhsdkfj\nksjdfhsdkjfhskfjhsdf"
+                android:textSize="@dimen/_14ssp"
+                app:layout_constraintStart_toEndOf="@id/startGuide"
+                app:layout_constraintTop_toBottomOf="@id/lblAboutCourseTag" />
+
+
+            <VideoView
+                android:id="@+id/instructorVideo"
+                android:layout_width="0dp"
+                android:layout_height="@dimen/_200sdp"
+                android:layout_marginTop="@dimen/_20sdp"
+                app:layout_constraintEnd_toStartOf="@id/endGuide"
+                app:layout_constraintStart_toEndOf="@id/startGuide"
+                app:layout_constraintTop_toBottomOf="@id/lblAboutSeries"
+
+                />
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/recViewInstructors"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:layout_constraintEnd_toStartOf="@id/endGuide"
+                app:layout_constraintStart_toEndOf="@id/startGuide"
+                app:layout_constraintTop_toBottomOf="@id/instructorVideo" />
+
+            <TextView
+                android:id="@+id/totalRuntimeTAG"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_10sdp"
+                android:text="TOTAL RUN TIME"
+                android:textColor="@color/black_60"
+                android:textSize="@dimen/_14ssp"
+                app:layout_constraintEnd_toStartOf="@id/endGuide"
+                app:layout_constraintStart_toEndOf="@id/startGuide"
+                app:layout_constraintTop_toBottomOf="@id/recViewInstructors" />
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </androidx.core.widget.NestedScrollView>
+</layout>
